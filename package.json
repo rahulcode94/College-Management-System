@@ -1,0 +1,19 @@
+{
+  "name": "college-management-system",
+  "version": "1.0.0",
+  "description": "College Management System - Full Stack MERN App",
+  "main": "backend/index.js",
+  "scripts": {
+    "start": "node backend/index.js",
+    "dev": "cd backend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": ["college", "management", "system", "mern"],
+  "author": "Rahul Gupta",
+  "license": "ISC",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
