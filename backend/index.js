@@ -15,9 +15,8 @@ app.use(
 
 app.use(express.json()); //to convert request data to json
 
-app.get("/", (req, res) => {
-  res.send("Hello 👋 I am Working Fine 🚀");
-});
+// Serve static files from frontend build
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.use("/media", express.static(path.join(__dirname, "media")));
 
@@ -32,6 +31,11 @@ app.use("/api/timetable", require("./routes/timetable.route"));
 app.use("/api/material", require("./routes/material.route"));
 app.use("/api/exam", require("./routes/exam.route"));
 app.use("/api/marks", require("./routes/marks.route"));
+
+// Fallback to index.html for React Router
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+});
 
 app.listen(port, () => {
   console.log(`Server Listening On http://localhost:${port}`);
