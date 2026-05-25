@@ -20,7 +20,6 @@ pnpm-debug.log*
 
 # Build output
 dist/
-build/
 coverage/
 
 # OS files
@@ -37,7 +36,6 @@ Thumbs.db
 
 # React / frontend
 frontend/node_modules/
-frontend/build/
 frontend/.env
 
 # Backend
